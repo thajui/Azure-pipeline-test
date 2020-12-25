@@ -25,7 +25,7 @@ stages:
   - job: secondjob
     steps:
       - bash: echo Development secondjob
-- stage: Q and A
+- stage: testing
   jobs:
   - job: firstjob
     steps:
