@@ -21,11 +21,11 @@ stages:
   jobs:
   - job: firstjob
     steps:
-      - bash: echo build firstjob
+      - bash: echo Development firstjob
   - job: secondjob
     steps:
-      - bash: echo build secondjob
-- stage: Q&A
+      - bash: echo Development secondjob
+- stage: Q and A
   jobs:
   - job: firstjob
     steps:
