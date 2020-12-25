@@ -18,8 +18,35 @@ stages:
     steps:
       - bash: echo build secondjob
 - stage: Development
+  jobs:
+  - job: firstjob
+    steps:
+      - bash: echo build firstjob
+  - job: secondjob
+    steps:
+      - bash: echo build secondjob
 - stage: Q&A
+  jobs:
+  - job: firstjob
+    steps:
+      - bash: echo build firstjob
+  - job: secondjob
+    steps:
+      - bash: echo build secondjob
 - stage: Prod
+  jobs:
+  - job: firstjob
+    steps:
+      - bash: echo build firstjob
+  - job: secondjob
+    steps:
+      - bash: echo build secondjob
 - stage: UI
-
+  jobs:
+  - job: firstjob
+    steps:
+      - bash: echo build firstjob
+  - job: secondjob
+    steps:
+      - bash: echo build secondjob
 
