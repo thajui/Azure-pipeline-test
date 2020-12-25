@@ -31,7 +31,6 @@ stages:
   dependsOn:
   - build
   - Development
-  - UI
   jobs:
   - job: firstjob
     steps:
@@ -40,6 +39,9 @@ stages:
     steps:
       - bash: echo build secondjob
 - stage: Prod
+  dependsOn:
+  - build
+  - Development
   jobs:
   - job: firstjob
     steps:
