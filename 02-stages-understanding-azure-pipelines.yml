@@ -9,6 +9,14 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 stages:
+- stage: UI
+  jobs:
+  - job: firstjob
+    steps:
+      - bash: echo build firstjob
+  - job: secondjob
+    steps:
+      - bash: echo build secondjob
 - stage: build
   dependsOn: Development
   jobs:
@@ -42,6 +50,7 @@ stages:
   dependsOn:
   - build
   - Development
+  - testing
   jobs:
   - job: firstjob
     steps:
@@ -49,12 +58,5 @@ stages:
   - job: secondjob
     steps:
       - bash: echo build secondjob
-- stage: UI
-  jobs:
-  - job: firstjob
-    steps:
-      - bash: echo build firstjob
-  - job: secondjob
-    steps:
-      - bash: echo build secondjob
+
 
