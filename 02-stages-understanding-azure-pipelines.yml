@@ -10,6 +10,7 @@ pool:
   vmImage: 'ubuntu-latest'
 stages:
 - stage: build
+  dependsOn: Development
   jobs:
   - job: firstjob
     steps:
@@ -18,6 +19,7 @@ stages:
     steps:
       - bash: echo build secondjob
 - stage: Development
+  dependsOn: UI
   jobs:
   - job: firstjob
     steps:
@@ -26,6 +28,10 @@ stages:
     steps:
       - bash: echo Development secondjob
 - stage: testing
+  dependsOn:
+  - build
+  - Development
+  - UI
   jobs:
   - job: firstjob
     steps:
